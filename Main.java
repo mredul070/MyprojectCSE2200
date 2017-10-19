@@ -1,56 +1,58 @@
- import java.util.Scanner;
-class Test
-{
-	int a;
-	int number1,number2;
-	void input()
-	{
-		System.out.println("Enter 1 for addition");
-		System.out.println("Enter 2 for subtraction");
-		System.out.println("Enter 3 for multiplication");
-		System.out.println("Enter 4 for division");
-		Scanner n=new Scanner(System.in);
-		a=n.nextInt();
-		System.out.println("Enter two number for the operation");
-		number1=n.nextInt();
-		number2=n.nextInt();
-	}
-	void printerror()
-	{
-		System.out.println("Invalid Input");
-	}
+import java.sql.Time;
 
-	
-	
-	
-}
 public class Main {
+	
+public static void dosomething(Animal t ){
+		
+			if(t instanceof Animal)
+			{
+				System.out.println("This is a object Animal");
+			}
+			else {
+				System.out.println("This is not a object of Animal");
+			}
+			
+			
+	}
+public static void variadic(Animal...nanimal)
+{
+	for(Animal p: nanimal)
+	{
+		if(p instanceof Birds)
+		{
+			Birds k=new Birds();
+			k.fly();
+		}
+		if(p instanceof Insects)
+		{
+			Insects k=new Insects();
+			k.valona();
+		}
+		if(p instanceof Land)
+		{
+			Land k=new Land();
+			k.shukna();
+		}
+	}
+}
 
 	public static void main(String[] args) {
-		Inherit Object = new Inherit();
-		Object.input();
-		if(Object.a==1)
-		{
-			Object.add(Object.number1,Object.number2);
-		}
-		else if(Object.a==2)
-		{
-			Object.subtraction(Object.number1,Object.number2);
-		}
-		else if(Object.a==3)
-		{
-			Object.multiplication(Object.number1, Object.number2);
-		}
-		else if(Object.a==4)
-		{
-			Object.division(Object.number1, Object.number2);
-			
-		}
-		else
-		{
-			Object.printerror();
-		}
-
+		Birds b=new Birds();
+		b.canmove();
+		Insects a=new Insects();
+		a.canmove();
+		Land c=new Land();
+		c.canmove();
+		Water d=new Water();
+		d.canmove();
+		Oviparous e=new Oviparous();
+		e.canmove();
+		Mammal f=new Mammal();
+		f.canmove();
+		Animal g=new Animal();
+		g.canmove(); 
+        dosomething(g);
+        variadic(a,b,c,d,e,f);
 	}
 
 }
